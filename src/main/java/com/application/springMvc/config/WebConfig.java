@@ -1,9 +1,5 @@
 package com.application.springMvc.config;
 
-/**
- * Конфигурационный файл на Java коде
- */
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -18,6 +14,11 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Java configuration
+ * @author Ihor Savchenko
+ * @version 1.0
+ */
 @Configuration
 @EnableWebMvc
 @ComponentScan("com.application.springMvc.controller")
