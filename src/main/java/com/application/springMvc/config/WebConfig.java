@@ -60,5 +60,4 @@ public class WebConfig implements WebMvcConfigurer {
         return list;
     }
 
-
 }

@@ -51,10 +51,10 @@ public class MvcController {
         InputStream in = servletContext.getResourceAsStream("/resources/image.gif");
         byte[] media = IOUtils.toByteArray(in);
         //headers.setCacheControl(CacheControl.noCache().getHeaderValue());
-        //headers.setCacheControl(CacheControl.maxAge(30, TimeUnit.DAYS).getHeaderValue());
-        //headers.setETag("W/Something like that\"");
+        headers.setCacheControl(CacheControl.maxAge(30, TimeUnit.DAYS).getHeaderValue());
+        headers.setETag("W/Something like that\"");
         //headers.setETag("\"Something like that\"");
-        //headers.setExpires(System.currentTimeMillis() + 100000);
+        headers.setExpires(System.currentTimeMillis() + 100000);
 
         ResponseEntity<byte[]> responseEntity = new ResponseEntity<>(media, headers, HttpStatus.OK);
         return responseEntity;
@@ -86,8 +86,8 @@ public class MvcController {
     @ResponseBody
     public ResponseEntity<Resource> getImageAsResourceFromResourceLoader() throws IOException {
         HttpHeaders headers = new HttpHeaders();
-        Resource resource = resourceLoader.getResource("/resources/image.gif");
-        //Resource resource = resourceLoader.getResource("file:d:/tmp/bry.jpg");
+        //Resource resource = resourceLoader.getResource("/resources/image.gif");
+        Resource resource = resourceLoader.getResource("file:e:/tmp/bry.png");
         return new ResponseEntity<>(resource, headers, HttpStatus.OK);
     }
 
